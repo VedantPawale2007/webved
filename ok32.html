@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Domain Converter</title>
+</head>
+<body>
+
+  <h1>Domain Converter</h1>
+
+  <form id="domainForm">
+    <label for="websiteUrl">Enter Website URL:</label><br>
+    <input type="url" id="websiteUrl" placeholder="Enter Website URL"><br>
+    <label for="newDomain">Enter New Domain:</label><br>
+    <input type="text" id="newDomain" placeholder="Enter New Domain"><br>
+    <button type="submit">Convert Domain</button>
+  </form>
+
+  <p>New Domain: <span id="outputDomain"></span></p>
+
+  <script>
+    document.getElementById('domainForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const websiteUrl = document.getElementById('websiteUrl').value;
+      const newDomain = document.getElementById('newDomain').value;
+      const outputDomain = document.getElementById('outputDomain');
+      
+      if (websiteUrl.trim() !== '' && newDomain.trim() !== '') {
+        // Perform domain conversion logic here (replace with actual conversion logic)
+        const convertedDomain = `https://${newDomain}`;
+        outputDomain.textContent = convertedDomain;
+      } else {
+        outputDomain.textContent = 'Please enter both the website URL and new domain.';
+      }
+    });
+  </script>
+
+</body>
+</html>

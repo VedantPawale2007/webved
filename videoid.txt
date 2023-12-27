@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload MP4 Video</title>
+</head>
+<body>
+
+  <h1>Upload MP4 Video</h1>
+
+  <form id="videoForm" enctype="multipart/form-data">
+    <input type="file" id="videoFile" accept="video/mp4">
+    <button type="submit">Upload Video</button>
+  </form>
+
+  <script>
+    document.getElementById('videoForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const videoFile = document.getElementById('videoFile').files[0];
+      if (videoFile) {
+        // You can handle the uploaded file here (e.g., upload to a server)
+        console.log('Uploaded file:', videoFile);
+        alert('File uploaded. To convert to YouTube ID, use YouTube\'s platform.');
+      } else {
+        alert('Please select a valid MP4 video file.');
+      }
+    });
+  </script>
+
+</body>
+</html>

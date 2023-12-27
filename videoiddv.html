@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open Webpage</title>
+</head>
+<body>
+
+  <h1>Open Webpage</h1>
+
+  <form id="webForm">
+    <input type="url" id="webUrl" placeholder="Enter Web URL">
+    <button type="submit">Open URL</button>
+  </form>
+
+  <script>
+    document.getElementById('webForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const webUrl = document.getElementById('webUrl').value;
+      if (webUrl.trim() !== '') {
+        window.open(webUrl, '_blank');
+      } else {
+        alert('Please enter a valid URL.');
+      }
+    });
+  </script>
+
+</body>
+</html>

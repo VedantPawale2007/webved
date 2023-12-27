@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>URL Shortener</title>
+</head>
+<body>
+
+  <h1>URL Shortener</h1>
+
+  <form id="shortenForm">
+    <input type="url" id="longUrl" placeholder="Enter Long URL">
+    <button type="submit">Shorten URL</button>
+  </form>
+
+  <p>Shortened URL: <span id="shortenedUrl"></span></p>
+
+  <script>
+    document.getElementById('shortenForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const longUrl = document.getElementById('longUrl').value;
+      if (longUrl.trim() !== '') {
+        const shortenedUrl = shortenUrl(longUrl);
+        document.getElementById('shortenedUrl').innerText = shortenedUrl;
+      } else {
+        alert('Please enter a valid URL.');
+      }
+    });
+
+    function shortenUrl(longUrl) {
+      // Simulated shortening process (replace this with server-side logic)
+      const uniqueId = Math.random().toString(36).substring(7);
+      return `https://yourdomain.com/${uniqueId}`; // Replace 'yourdomain.com' with your domain
+    }
+  </script>
+
+</body>
+</html>
